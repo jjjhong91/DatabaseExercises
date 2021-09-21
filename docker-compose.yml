@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/azure-sql-edge
+    restart: always
+    container_name: sqlserver
+    ports: 
+      - "1433:1433"
+    environment: 
+      - ACCEPT_EULA=1
+      - MSSQL_SA_PASSWORD=P@ssw0rd
+    cap_add: 
+      - SYS_PTRACE
+  postgres:
+    image: postgres
+    restart: always
+    container_name: postgres
+    ports: 
+      - "5342:5342"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=P@ssw0rd
+      - PGDATA=/var/lib/postgresql/data/pgdata
