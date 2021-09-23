@@ -18,7 +18,7 @@ namespace DatabaseExercises.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+                        
         }
     }
 
